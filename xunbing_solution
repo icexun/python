@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+#generate 200 activation code 第 0001 题：做为 Apple Store App 独立开发者，你要搞限时促销，为你的应用生成激活码（或者优惠券），使用 Python 如何生成 200 个激活码（或者优惠券）？
+
+from random import Random
+
+codelist = []
+
+def randomcode(randlength):
+        str = ''
+        chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
+        length = len(chars)-1
+        random = Random()
+        for i in range(randlength):
+                str += chars[random.randint(0,length)]
+        return str
+
+for i in range(0,200):
+        codelist.append(randomcode(8))
+print codelist
